@@ -5,7 +5,9 @@ class RoundsController < ApplicationController
   end
 
   def create
+    @game = Game.find(params[:id])
     @round = Round.new(round_params)
+    @round.game = @game
     if @round.save
       redirect_to game_rounds_path
     else
