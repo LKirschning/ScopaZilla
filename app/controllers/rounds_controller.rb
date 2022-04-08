@@ -1,7 +1,9 @@
 class RoundsController < ApplicationController
 
   def new
+    @game = Game.find(params[:game_id])
     @round = Round.new
+    @round.game = @game
   end
 
   def create
@@ -9,7 +11,7 @@ class RoundsController < ApplicationController
     @round = Round.new(round_params)
     @round.game = @game
     if @round.save
-      redirect_to game_rounds_path
+      redirect_to game_rounds_path(@game)
     else
       render :new
     end
@@ -18,7 +20,6 @@ class RoundsController < ApplicationController
   def index
     @game = Game.find(params[:game_id])
     @rounds = Round.where(game_id: @game)
-
   end
 
   private

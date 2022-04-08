@@ -4,7 +4,7 @@
 <div class="d-flex">
 
   <div>
-  <% @game.rounds %>
+  <%  %>
   <ul>
 
   </ul>
@@ -15,3 +15,5 @@
   </ul>
   </div>
 </div>
+
+<%= link_to "Write down points", new_game_round_path(@game) %>
