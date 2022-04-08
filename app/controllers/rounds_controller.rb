@@ -5,7 +5,7 @@ class RoundsController < ApplicationController
   end
 
   def create
-    @game = Game.find(params[:id])
+    @game = Game.find(params[:game_id])
     @round = Round.new(round_params)
     @round.game = @game
     if @round.save
@@ -16,7 +16,9 @@ class RoundsController < ApplicationController
   end
 
   def index
-    @rounds = Round.all
+    @game = Game.find(params[:game_id])
+    @rounds = Round.where(game_id: @game)
+
   end
 
   private
