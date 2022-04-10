@@ -1,21 +1,98 @@
 <h1>Enter points of round</h1>
 
-<%= simple_form_for [@game, @round] do |f|%>
-  <%= f.input :oro, as: :radio_buttons, collection: [['player 1', 0],['player 2', 1], ["nobody", nil] ], label_method: :first, value_method: :second %>
-  <%= f.input :sette %>
-  <%= f.submit :submit %>
-<% end %>
-
-<div class="d-flex">
+<%= form_for [@game, @round] do |f| %>
+<h3>Oro</h3>
+<div class="d-flex justify-content-between ">
   <div>
-  <%  %>
-  <ul>
-
-  </ul>
+    <%  %>
+    <ul class="no-dot-list">
+    <li>
+    <%= f.radio_button :oro, "Player 1" %> Player 1
+    </li>
   </div>
   <div>
-  <ul>
-
-  </ul>
+    <ul class="no-dot-list">
+      <li>
+          <%= f.radio_button :oro, "Player 2" %> Player 2
+      </li>
+    </ul>
   </div>
 </div>
+
+<h3>Sette Bello</h3>
+<div class="d-flex justify-content-between ">
+  <div>
+    <%  %>
+    <ul class="no-dot-list">
+    <li>
+    <%= f.radio_button :sette, "0" %> Player 1
+    </li>
+    </ul>
+  </div>
+  <div>
+    <ul class="no-dot-list">
+      <li>
+          <%= f.radio_button :sette, "1" %> Player 2
+      </li>
+    </ul>
+  </div>
+</div>
+
+<h3>Primera</h3>
+<div class="d-flex justify-content-between ">
+  <div>
+    <%  %>
+    <ul class="no-dot-list">
+    <li>
+    <%= f.radio_button :sette, "0" %> Player 1
+    </li>
+    </ul>
+  </div>
+  <div>
+    <ul class="no-dot-list">
+      <li>
+          <%= f.radio_button :sette, "1" %> Player 2
+      </li>
+    </ul>
+  </div>
+</div>
+
+<h3>Cards</h3>
+<div class="d-flex justify-content-between ">
+  <div>
+    <%  %>
+    <ul class="no-dot-list">
+    <li>
+    <%= f.radio_button :sette, "0" %> Player 1
+    </li>
+    </ul>
+  </div>
+  <div>
+    <ul class="no-dot-list">
+      <li>
+          <%= f.radio_button :sette, "1" %> Player 2
+      </li>
+    </ul>
+  </div>
+</div>
+
+<h3>Scopa</h3>
+<div class="d-flex justify-content-between ">
+  <div>
+    <%  %>
+    <ul class="no-dot-list">
+    <li>
+    <%= f.text_field :sette, class: "scopa-field" %> Player 1
+    </li>
+    </ul>
+  </div>
+  <div>
+    <ul class="no-dot-list">
+      <li>
+          <%= f.text_field :sette, class: "scopa-field" %> Player 2
+      </li>
+    </ul>
+  </div>
+</div>
+<%= f.submit :submit %>
+<% end %>
