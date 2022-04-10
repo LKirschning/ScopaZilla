@@ -22,7 +22,6 @@
 <h3>Sette Bello</h3>
 <div class="d-flex justify-content-between ">
   <div>
-    <%  %>
     <ul class="no-dot-list">
     <li>
     <%= f.radio_button :sette, "0" %> Player 1
@@ -44,14 +43,14 @@
     <%  %>
     <ul class="no-dot-list">
     <li>
-    <%= f.radio_button :sette, "0" %> Player 1
+    <%= f.radio_button :primera, "0" %> Player 1
     </li>
     </ul>
   </div>
   <div>
     <ul class="no-dot-list">
       <li>
-          <%= f.radio_button :sette, "1" %> Player 2
+          <%= f.radio_button :primera, "1" %> Player 2
       </li>
     </ul>
   </div>
@@ -63,14 +62,14 @@
     <%  %>
     <ul class="no-dot-list">
     <li>
-    <%= f.radio_button :sette, "0" %> Player 1
+    <%= f.radio_button :cards, "0" %> Player 1
     </li>
     </ul>
   </div>
   <div>
     <ul class="no-dot-list">
       <li>
-          <%= f.radio_button :sette, "1" %> Player 2
+          <%= f.radio_button :cards, "1" %> Player 2
       </li>
     </ul>
   </div>
@@ -82,14 +81,14 @@
     <%  %>
     <ul class="no-dot-list">
     <li>
-    <%= f.text_field :sette, class: "scopa-field" %> Player 1
+    <%= f.text_field :scopa_player0, class: "scopa-field" %> Player 1
     </li>
     </ul>
   </div>
   <div>
     <ul class="no-dot-list">
       <li>
-          <%= f.text_field :sette, class: "scopa-field" %> Player 2
+          <%= f.text_field :scopa_player1, class: "scopa-field" %> Player 2
       </li>
     </ul>
   </div>

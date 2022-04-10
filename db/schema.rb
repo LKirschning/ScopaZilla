@@ -52,8 +52,8 @@ ActiveRecord::Schema.define(version: 2022_04_08_080826) do
     t.integer "bello"
     t.integer "primera"
     t.integer "cards"
-    t.integer "scopa_player0", default: 0
-    t.integer "scopa_player1", default: 0
+    t.integer "scopa_player0"
+    t.integer "scopa_player1"
     t.index ["game_id"], name: "index_rounds_on_game_id"
   end
 
