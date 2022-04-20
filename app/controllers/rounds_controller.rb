@@ -33,7 +33,6 @@ class RoundsController < ApplicationController
       player1 += round.scopa_player1 unless round.scopa_player1.nil?
       round.points_player0 = player0
       round.points_player1 = player1
-
       round
   end
 
