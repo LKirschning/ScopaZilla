@@ -5,7 +5,6 @@ class CreateGames < ActiveRecord::Migration[6.1]
       t.integer :time_played
       t.string :winner
       t.integer :rounds_played
-      t.integer :player_amount
 
       t.timestamps
     end

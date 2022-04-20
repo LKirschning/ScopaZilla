@@ -1,0 +1,97 @@
+<h1>Enter points of round</h1>
+
+<%= form_for [@game, @round] do |f| %>
+<h3>Oro</h3>
+<div class="d-flex justify-content-between ">
+  <div>
+    <%  %>
+    <ul class="no-dot-list">
+    <li>
+    <%= f.radio_button :oro, "Player 1" %> Player 1
+    </li>
+  </div>
+  <div>
+    <ul class="no-dot-list">
+      <li>
+          <%= f.radio_button :oro, "Player 2" %> Player 2
+      </li>
+    </ul>
+  </div>
+</div>
+
+<h3>Sette Bello</h3>
+<div class="d-flex justify-content-between ">
+  <div>
+    <ul class="no-dot-list">
+    <li>
+    <%= f.radio_button :sette, "0" %> Player 1
+    </li>
+    </ul>
+  </div>
+  <div>
+    <ul class="no-dot-list">
+      <li>
+          <%= f.radio_button :sette, "1" %> Player 2
+      </li>
+    </ul>
+  </div>
+</div>
+
+<h3>Primera</h3>
+<div class="d-flex justify-content-between ">
+  <div>
+    <%  %>
+    <ul class="no-dot-list">
+    <li>
+    <%= f.radio_button :primera, "0" %> Player 1
+    </li>
+    </ul>
+  </div>
+  <div>
+    <ul class="no-dot-list">
+      <li>
+          <%= f.radio_button :primera, "1" %> Player 2
+      </li>
+    </ul>
+  </div>
+</div>
+
+<h3>Cards</h3>
+<div class="d-flex justify-content-between ">
+  <div>
+    <%  %>
+    <ul class="no-dot-list">
+    <li>
+    <%= f.radio_button :cards, "0" %> Player 1
+    </li>
+    </ul>
+  </div>
+  <div>
+    <ul class="no-dot-list">
+      <li>
+          <%= f.radio_button :cards, "1" %> Player 2
+      </li>
+    </ul>
+  </div>
+</div>
+
+<h3>Scopa</h3>
+<div class="d-flex justify-content-between ">
+  <div>
+    <%  %>
+    <ul class="no-dot-list">
+    <li>
+    <%= f.text_field :scopa_player0, class: "scopa-field" %> Player 1
+    </li>
+    </ul>
+  </div>
+  <div>
+    <ul class="no-dot-list">
+      <li>
+          <%= f.text_field :scopa_player1, class: "scopa-field" %> Player 2
+      </li>
+    </ul>
+  </div>
+</div>
+<%= f.submit :submit %>
+<% end %>

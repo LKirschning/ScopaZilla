@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_04_03_141008) do
+ActiveRecord::Schema.define(version: 2022_04_08_080826) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -29,6 +29,7 @@ ActiveRecord::Schema.define(version: 2022_04_03_141008) do
     t.integer "rounds_played"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "player_amount"
   end
 
   create_table "players", force: :cascade do |t|
@@ -40,27 +41,19 @@ ActiveRecord::Schema.define(version: 2022_04_03_141008) do
     t.index ["user_id"], name: "index_players_on_user_id"
   end
 
-  create_table "round_statistics", force: :cascade do |t|
-    t.bigint "round_id", null: false
-    t.integer "oro"
-    t.integer "sette_bello"
-    t.integer "primera"
-    t.integer "cards"
-    t.integer "scopa_winner"
-    t.integer "scopa_loser"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["round_id"], name: "index_round_statistics_on_round_id"
-  end
-
   create_table "rounds", force: :cascade do |t|
     t.bigint "game_id", null: false
-    t.integer "winner_points"
-    t.integer "loser_points"
-    t.string "winner"
-    t.string "loser"
+    t.integer "points_player0"
+    t.integer "points_player1"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "oro"
+    t.integer "sette"
+    t.integer "bello"
+    t.integer "primera"
+    t.integer "cards"
+    t.integer "scopa_player0"
+    t.integer "scopa_player1"
     t.index ["game_id"], name: "index_rounds_on_game_id"
   end
 
@@ -79,6 +72,4 @@ ActiveRecord::Schema.define(version: 2022_04_03_141008) do
   add_foreign_key "game_players", "games"
   add_foreign_key "players", "game_players", column: "game_players_id"
   add_foreign_key "players", "users"
-  add_foreign_key "round_statistics", "rounds"
-  add_foreign_key "rounds", "games"
 end

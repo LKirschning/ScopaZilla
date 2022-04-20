@@ -1,0 +1,8 @@
+
+<h1>Set Rules!</h1>
+
+<%= simple_form_for @game do |f| %>
+  <%= f.input  :winning_points %>
+  <%= f.input :player_amount, label: "2 or 4 players?"  %>
+  <%= f.submit :submit %>
+<% end %>
