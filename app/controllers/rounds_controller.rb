@@ -45,7 +45,7 @@ class RoundsController < ApplicationController
   private
 
   def round_params
-    params.require(:round).permit(:oro, :sette, :primera, :cards, :scopa_loser, :scopa_winner)
+    params.require(:round).permit(:oro, :sette, :primera, :cards, :scopa_player0, :scopa_player1)
   end
 
 end
