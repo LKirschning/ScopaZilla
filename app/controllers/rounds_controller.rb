@@ -33,7 +33,6 @@ class RoundsController < ApplicationController
       player1 += round.scopa_player1 unless round.scopa_player1.nil?
       round.points_player0 = player0
       round.points_player1 = player1
-
       round
   end
 
@@ -46,7 +45,7 @@ class RoundsController < ApplicationController
   private
 
   def round_params
-    params.require(:round).permit(:oro, :sette, :primera, :cards, :scopa_loser, :scopa_winner)
+    params.require(:round).permit(:oro, :sette, :primera, :cards, :scopa_player0, :scopa_player1)
   end
 
 end
