@@ -10,6 +10,10 @@
         <%= round.points_player0 unless round.nil? %>
       </li>
       <% end %>
+        <li>
+        
+          <%= "Total: #{@total_player0}"   %>
+        </li>
     </ul>
   </div>
   <div>
@@ -17,10 +21,14 @@
       <% @rounds.each do |round| %>
       <li>
         <%= round.points_player1 unless round.nil? %>
+        
       </li>
       <% end %>
+        <li>
+          <%= "Total: #{@total_player1}"  %>
+        </li>
     </ul>
   </div>
 </div>
 
-<%= link_to "Write down points", new_game_round_path(@game) %>
+<%= link_to "Write down points", new_game_round_path(@game), class:"btn btn-primary rounded" %>

@@ -10,7 +10,7 @@ class RoundsController < ApplicationController
     @game = Game.find(params[:game_id])
     @round = Round.new(round_params)
     @round.game = @game
-    @round = calculate_total_points(@round)
+    @round = calculate_round_points(@round)
     if @round.save
       redirect_to game_rounds_path(@game)
     else
@@ -18,7 +18,7 @@ class RoundsController < ApplicationController
     end
   end
 
-  def calculate_total_points(round)
+  def calculate_round_points(round)
     # this should be in the model
     player0 = 0
     player1 = 0
@@ -36,10 +36,21 @@ class RoundsController < ApplicationController
       round
   end
 
+  def calculate_total_points()
+    player0 = 0 
+    player1 = 0
+    Round.where(game_id: @game).each do |round|
+      player0 += round.points_player0
+      player1 += round.points_player1
+    end
+    [player0 ,player1]
+  end
 
   def index
     @game = Game.find(params[:game_id])
     @rounds = Round.where(game_id: @game)
+    @total_player0 = calculate_total_points[0]
+    @total_player1 = calculate_total_points[1]
   end
 
   private

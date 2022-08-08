@@ -13,10 +13,30 @@
   </head>
 
   <body>
-  <div class="container text-center">
-    <div class="mt-5">
+  <div class="container mt-5">
+    <div class="row">
+    <div class="col">
+      <%= image_tag "https://upload.wikimedia.org/wikipedia/commons/d/dd/Carte_2_denier_d%C3%A9butXIX.jpg" %>
     </div>
-    <%= yield %>
+    <div class="col text-center bg-warning rounded-5 pb-3">
+      <%= yield %>
+    </div>
+    <div class="col">
+      <%= image_tag "https://upload.wikimedia.org/wikipedia/commons/9/9f/Bergamo_Deck_-_Coins_-_02.jpg" %>
+    </div>
+  </div>
+</div>
+
+    <div class="row">
+    <div class="col">1</div>
+    </div>
+     <div class="row">
+    <div class="col"> </div>
+    </div>
+     <div class="row">
+    <div class="col">1</div>
+    </div>
+
   </div>
   </body>
 </html>

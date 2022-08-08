@@ -1,19 +1,27 @@
 <h1>Enter points of round</h1>
 
+<%= form_for [@game, @round] do |f| %>
+
 <h3>Oro</h3>
-<div class="text-center">
-  <div class="switch">
-    <input name="switch" id="one" type="radio" checked/>
-    <label for="one" class="switch__label">One</label>
-    <input name="switch" id="two" type="radio" />
-    <label for="two" class="switch__label">Two</label>
-    <input name="switch" id="three" type="radio" />
-    <label for="three" class="switch__label" >Three</label>
-    <div class="switch__indicator" /></div>
+<div class="d-flex justify-content-between ">
+  <div>
+    <ul class="no-dot-list">
+    <li>
+    <%= f.radio_button :oro, "0" %>
+    <%= f.label :sette_0, "Player 1" %>
+    </li>
+    </ul>
+  </div>
+  <div>
+    <ul class="no-dot-list">
+      <li>
+          <%= f.radio_button :oro, "1" %>
+          <%= f.label :sette_1, "Player 2" %>
+      </li>
+    </ul>
   </div>
 </div>
 
-<%= form_for [@game, @round] do |f| %>
 
 
 <h3>Sette Bello</h3>
